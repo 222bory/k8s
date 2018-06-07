@@ -1,8 +1,8 @@
 #/usr/bin/env bash
-export KOPS_STATE_STORE=s3://k8s.sicc.co.kr
-export CLUSTER_NAME=gsp.sicc.co.kr
-export VPC_ID=vpc-4fdb7927
+export KOPS_STATE_STORE=s3://cluster.k8s.bory.xyz
+export CLUSTER_NAME=222bory.xyz
+export VPC_ID=vpc-0b78a8a9d34112c50
 
-kops create cluster --name=$CLUSTER_NAME --zones=ap-northeast-2a --cloud=aws --dns-zone=gsp.sicc.co.kr \
---master-size=t2.large --node-size=t2.medium --node-count=2 --master-count=1 \
---vpc=$VPC_ID --topology=private --networking=calico
+kops create cluster --name=$CLUSTER_NAME --zones=ap-northeast-2c --cloud=aws --dns-zone=222bory.xyz \
+--master-size=t2.micro --node-size=t2.micro --node-count=2 --master-count=1 \
+--vpc=$VPC_ID #--topology=private --networking=calico
